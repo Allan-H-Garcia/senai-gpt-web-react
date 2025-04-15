@@ -9,5 +9,8 @@ node --version
 3. Entre na pasta do projeto e abra o CMD e insira o comando:
 npm create vite@latest senai-gpt-web-react -- --template react
 
-4. Atualize as blibiotecas do node dentro do VSCode, insira no terminal o seguinte comando:
-npm install 
+4. Atualize as blibiotecas do node dentro do VSCode, insira no terminal o seguinte comando:(isso é necessario porque nao sobe os arquivos no git, entao precisa fazer toda vez)
+npm install
+
+5. use o comando: npm run dev
+para execurat
