@@ -1,35 +1,64 @@
 import "./login.css";
+import logo from "../../assets/imgs/chat.png";
+import { useState } from "react";
 
 function Login() {
-  
-    return (
-      <>
-          <header></header>
+  const [email, setEmail] = useState(""); //capturar dados para usar no cod
 
-<main className="page-container">
-    <div className="robo-image">
-    </div>
-    <div className="logincontainer">
+  const [senha, setSenha] = useState("");
 
-        <img className="logo" src="../Assets/Imgs/Chat.png" alt="Senai GPT logo"/>
+  const onLoginClick = async () => {
+    let response = await fetch(
+      "https://senai-gpt-api.azurewebsites.net/login",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify( {
+            email: email,
+            password: senha
+        })
+      }
+    );
+    console.log(response);
+  };
 
-        <h1>
-            Login
-        </h1>
+  return (
+    <>
+      <header></header>
 
-        <input className="inpt" type="email" placeholder="Insira o e-mail"/>
-        <input className="inpt" type="password" placeholder="Insira sua senha"/>
+      <main className="page-container">
+        <div className="robo-image"></div>
+        <div className="logincontainer">
+          <img className="logo" src={logo} alt="Senai GPT logo" />
 
-        <button className="btn">Entrar</button>
-    </div>
+          <h1>Login</h1>
 
-</main>
+          <input
+            className="inpt"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            type="email"
+            placeholder="Insira o e-mail"
+          />
+          <input
+            className="inpt"
+            value={senha}
+            onChange={(event) => setSenha(event.target.value)}
+            type="password"
+            placeholder="Insira sua senha"
+          />
 
-<footer></footer>
+          <button className="btn" onClick={() => onLoginClick()}>
+            Entrar
+          </button>
+        </div>
+      </main>
 
-      </>
-    )
-  }
-  
-  export default Login;
-  
+      <footer></footer>
+    </>
+  );
+}
+
+export default Login;
