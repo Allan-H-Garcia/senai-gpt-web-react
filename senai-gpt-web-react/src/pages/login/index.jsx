@@ -1,7 +1,8 @@
 import "./login.css";
 import logo from "../../assets/imgs/chat.png";
 import { useState } from "react";
-
+//login front@email.com
+//senha frontdomina
 function Login() {
   const [email, setEmail] = useState(""); //capturar dados para usar no cod
 
@@ -15,15 +16,31 @@ function Login() {
           "Content-Type": "application/json",
         },
         method: "POST",
-        body: JSON.stringify( {
-            email: email,
-            password: senha
-        })
+        body: JSON.stringify({
+          email: email,
+          password: senha,
+        }),
       }
     );
-    console.log(response);
-  };
 
+    if (response.ok == true) {
+      alert("Login realizado com sucesso");
+      console.log(response);
+      let json = await response.json();
+      let token = json.accessToken;
+      console.log("token: " + token);
+      localStorage.setItem("meutoken", token)
+      window.location.href = "/chat";
+    } else {
+      if (response.status == 401) {
+        alert("Credenciaias incorretas. Tente novamente");
+      } else {
+        alert(
+          "Erro inesperado aconteceu, caso persista contate os administradores."
+        );
+      }
+    }
+  };
   return (
     <>
       <header></header>
