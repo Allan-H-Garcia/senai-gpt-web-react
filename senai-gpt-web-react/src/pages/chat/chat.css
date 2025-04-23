@@ -1,0 +1,143 @@
+.btn {
+    color: white;
+    background-color: black;
+    border-radius: 7px;
+    width: 300px;
+    height: 35px ;  
+    font-size: 16px;
+    
+  }
+  
+  .container {
+    display: flex;
+    
+  }
+  
+  .painel-lateral {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 100vh;
+    width: 20vw;
+    /* background-color: red; */
+    border-right: 1px solid black;
+    justify-content: space-between;
+    
+  }
+  
+  .painel-lateral img{
+    margin-right: 5px;
+  }
+  
+  .painel-central {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+    width: 80vw;
+    align-content: center;
+    align-items: center;
+    /* background-color: blue; */
+  }
+  
+  .painel-lateral-topo {
+    width: 100%;
+    height: 70%;
+   /* background-color: green;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  
+  
+  }
+  
+  .painel-lateral-bot {
+    border-top: 1px solid rgba(0, 0, 0, 0.116);
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /*background-color: purple;*/
+   
+  }
+  
+  .painel-lateral-topo img{
+  
+    margin-right: 10px;
+  }
+  
+   .pesquisa {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60vw;
+    height: 100px;
+    border: none;
+    background-color: #F7f9fb;
+    border-radius: 15px;
+   
+    /*border: 5px solid black;
+    border-radius: 25px;*/
+    /* background-color: blueviolet; */
+  } 
+  
+  .pesquisa img{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  
+  
+  .search {
+    width: 50vw;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    background-color: #F7f9fb;
+    text-decoration: none;
+  
+  }
+  
+  .chat-help {
+    background-color: white;
+    border: none;
+    text-decoration: none;
+    text-align: left;
+    width: 300px;
+    height: 35px ;
+    font-size: 16px;
+    align-items: center;
+  
+  }
+  
+  .tutorial {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 30px;
+    /* background-color: gold; */
+  }
+  
+  .tutorial h1 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .tutorial p {
+    font-size: 12px;
+  }
+  
+  .logo {
+  
+    width: 400px;
+  }
