@@ -17,6 +17,7 @@ import { useEffect, useState } from "react";
 
 function Chat() {
   const [chats, setchats] = useState([]);
+  const [chatSelecionado, setChatSelecionado] = useState(null);
 
   useEffect(() => {
     getChats();
@@ -38,9 +39,19 @@ function Chat() {
     } else {
       if (response.status == 401) {
         alert("Token inválido. Faça login novamente.");
+        localStorage.clear();
         window.location.href = "/login";
       }
     }
+  };
+
+  const onLogOutClick = () => {
+    localStorage.clear();
+    window.location.href = "/login";
+  };
+
+  const clickchat = (chat) => {
+    setChatSelecionado(chat);
   };
 
   return (
@@ -48,17 +59,14 @@ function Chat() {
       <div className="container">
         <header className="painel-lateral">
           <div className="painel-lateral-topo">
-            <button className="btn">Novo Chat</button>
+            <button className="btnnovochat">Novo Chat</button>
 
-            
-{chats.map(chat => (
-	<button className="chat-help">
-              <img src={chattext} alt="" />
-              {chat.chattitle}
-            </button>
-	
-))}	
-            
+            {chats.map((chat) => (
+              <button className="chat-help" onClick={() => clickchat(chat)}>
+                <img src={chattext} alt="" />
+                {chat.chatTitle}
+              </button>
+            ))}
           </div>
 
           <div className="painel-lateral-bot">
@@ -86,7 +94,7 @@ function Chat() {
               Updates & FAQ
             </button>
 
-            <button className="chat-help">
+            <button className="chat-help" onClick={() => onLogOutClick()}>
               {" "}
               <img src={out} alt="" />
               Log out
@@ -94,42 +102,48 @@ function Chat() {
           </div>
         </header>
         <main className="painel-central">
-          <div>
-            <img src={logochat} alt="" className="logo" />
-          </div>
-          <div className="tutorial">
-            <div className="txt1">
-              <p align="center">
-                <img src={icon1} alt="exemplos" />
-              </p>
-              <h1>Examples</h1>
-              <p>"Explain quantum computing insimple terms"</p>
-              <p>"Got any creative ideas for a 10year old's birthday?"</p>
-              <p>"How do I make an HTTP requestin Javascript?"</p>
-            </div>
+          {chatSelecionado == null && (
+            <>
+              <div>
+                <img src={logochat} alt="" className="logo" />
+              </div>
+              <div className="tutorial">
+                <div className="txt1">
+                  <p align="center">
+                    <img src={icon1} alt="exemplos" />
+                  </p>
+                  <h1>Examples</h1>
+                  <p>"Explain quantum computing insimple terms"</p>
+                  <p>"Got any creative ideas for a 10year old's birthday?"</p>
+                  <p>"How do I make an HTTP requestin Javascript?"</p>
+                </div>
 
-            <div className="txt1">
-              <p align="center">
-                <img src={icon2} alt="capacidades" />
-              </p>
-              <h1>Capabilities</h1>
-              <p>Remembers what user saidearlier in the conversation.</p>
-              <p>Allows user to provide follow-up corrections.</p>
-              <p>Trained to decline inappropriate reqsuests.</p>
-            </div>
+                <div className="txt1">
+                  <p align="center">
+                    <img src={icon2} alt="capacidades" />
+                  </p>
+                  <h1>Capabilities</h1>
+                  <p>Remembers what user saidearlier in the conversation.</p>
+                  <p>Allows user to provide follow-up corrections.</p>
+                  <p>Trained to decline inappropriate reqsuests.</p>
+                </div>
 
-            <div className="txt1">
-              <p align="center">
-                <img src={icon3} alt="limitaçoes" />
-              </p>
-              <h1>Limitations</h1>
-              <p>May occasionally generate incorrect information.</p>
-              <p>
-                May occasionally produce harmful instructions or biased content.
-              </p>
-              <p>Limited knowledge of world andevents after 2021.</p>
-            </div>
-          </div>
+                <div className="txt1">
+                  <p align="center">
+                    <img src={icon3} alt="limitaçoes" />
+                  </p>
+                  <h1>Limitations</h1>
+                  <p>May occasionally generate incorrect information.</p>
+                  <p>
+                    May occasionally produce harmful instructions or biased
+                    content.
+                  </p>
+                  <p>Limited knowledge of world andevents after 2021.</p>
+                </div>
+              </div>
+            </>
+          )}
+
           <div className="pesquisa">
             <img src={mic} alt="" />
             <img src={img1} alt="" />
