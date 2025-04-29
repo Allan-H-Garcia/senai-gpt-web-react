@@ -57,9 +57,9 @@ function Chat() {
   };
 
   const chatGPT = async (message) => {
-    // Configurações do endpoint e chave da API
+
     const endpoint = "https://ai-testenpl826117277026.openai.azure.com/";
-    const apiKey =
+    const apiKey = "DCYQGY3kPmZXr0lh7xeCSEOQ5oiy1aMlN1GeEQd5G5cXjuLWorWOJQQJ99BCACYeBjFXJ3w3AAAAACOGol8N";
     const deploymentId = "gpt-4"; // Nome do deployment no Azure OpenAI
     const apiVersion = "2024-05-01-preview"; // Verifique a versão na documentação
 
@@ -68,48 +68,51 @@ function Chat() {
 
     // Configurações do corpo da requisição
     const data = {
-      messages: [{ role: "user", content: message }],
-      max_tokens: 50,
+        messages: [{ role: "user", content: message }],
+        max_tokens: 50
     };
 
     // Cabeçalhos da requisição
     const headers = {
-      "Content-Type": "application/json",
-      "api-key": apiKey,
+        "Content-Type": "application/json",
+        "api-key": apiKey
     };
 
     // Faz a requisição com fetch
     const response = await fetch(url, {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(data),
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(data)
     });
 
     if (response.ok) {
-      const result = await response.json();
-      const botMessage = result.choices[0].message.content;
-      return botMessage;
+        const result = await response.json();
+        const botMessage = result.choices[0].message.content;
+        return botMessage;
     }
-  };
+
+}
+
+  let userId = localStorage.getItem("meuId")
 
   const enviarMensagem = async (message) => {
-    let resposta = await chatGPT(message);
-    console.log("Resposta: ", resposta);
+    let respostaGPT = await chatGPT(message);
+    console.log("Resposta: ", respostaGPT);
     const novaMensagemUsuario = {
-      userId: "",
-      text: message
-      id: 10
+      userId: userId,
+      text: message,
+      id: crypto.randomUUID(),
     }
-let novaRespostaChatGPT = {
-userId: "chatbot",
-text: resposta,
-id: 10
-}; 
+    let novaRespostaChatGPT = {
+      userId: "chatbot",
+      text: respostaGPT,
+      id: crypto.randomUUID(),
+    };
 
-let novoChatSelecionado = {...chatSelecionado} 
-novoChatSelecionado.messages.push(novaMensagemUsuario)
-novoChatSelecionado.messages.push(novaRespostaChatGPT)
-setChatSelecionado(novoChatSelecionado)
+    let novoChatSelecionado = { ...chatSelecionado }
+    novoChatSelecionado.messages.push(novaMensagemUsuario)
+    novoChatSelecionado.messages.push(novaRespostaChatGPT)
+    setChatSelecionado(novoChatSelecionado)
   };
 
   return (
