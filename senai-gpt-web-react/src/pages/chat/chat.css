@@ -28,6 +28,7 @@
     border-right: 1px solid black;
     justify-content: space-between;
     
+    
   }
   
   .painel-lateral img{
@@ -53,7 +54,7 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
-  
+    overflow: auto;
   
   }
   
@@ -70,7 +71,7 @@
   }
   
   .painel-lateral-topo img{
-  
+
     margin-right: 10px;
   }
   
@@ -162,6 +163,8 @@
     padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
+    height: 90vh;
+    overflow: auto;
 
 }
 
@@ -196,5 +199,6 @@
     margin-left: unset;
     color: white;
     background: #000;
+    
 
 }
