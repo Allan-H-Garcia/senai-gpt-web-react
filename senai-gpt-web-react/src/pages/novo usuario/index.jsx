@@ -1,36 +1,36 @@
-import "./login.css";
+import "./nuser.css";
 import logo from "../../assets/imgs/chat.png";
 import { useState } from "react";
 //login front@email.com
 //senha frontdomina
-function Login() {
+function Nuser() {
   const [email, setEmail] = useState(""); //capturar dados para usar no cod
-
-  const [senha, setSenha] = useState("");
+  const [name, setName] = useState("");
+  const [senha, setSenha] = useState(""); 
+  const [csenha, setcSenha] = useState("");
 
   const onLoginClick = async () => {
-    let response = await fetch(
-      "https://senai-gpt-api.up.railway.app/login",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify({
-          email: email,
-          password: senha,
-        }),
-      }
-    );
+    let response = await fetch("https://senai-gpt-api.up.railway.app/users", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: senha,
+        username: name,
+        confirmpassword: csenha,
+      }),
+    });
 
     if (response.ok == true) {
-      alert("Login realizado com sucesso");
+      alert("Usuario cadastrado com sucesso");
       console.log(response);
       let json = await response.json();
       let token = json.accessToken;
       console.log("token: " + token);
-      localStorage.setItem("meutoken", token)
-      window.location.href = "/chat";
+      localStorage.setItem("meutoken", token);
+      window.location.href = "/login";
     } else {
       if (response.status == 401) {
         alert("Credenciaias incorretas. Tente novamente");
@@ -46,11 +46,19 @@ function Login() {
       <header></header>
 
       <main className="page-container">
-        <div className="robo-image"></div>
+        <div className="nuser-image"></div>
         <div className="logincontainer">
           <img className="logo" src={logo} alt="Senai GPT logo" />
 
-          <h1>Login</h1>
+          <h1>Novo Usuario</h1>
+
+          <input
+            className="inpt"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            type="User name"
+            placeholder="Digite seu nome"
+          />
 
           <input
             className="inpt"
@@ -59,6 +67,7 @@ function Login() {
             type="email"
             placeholder="Insira o e-mail"
           />
+
           <input
             className="inpt"
             value={senha}
@@ -67,12 +76,20 @@ function Login() {
             placeholder="Insira sua senha"
           />
 
+          <input
+            className="inpt"
+            value={csenha}
+            onChange={(event) => setcSenha(event.target.value)}
+            type="password"
+            placeholder="Confirme a sua senha"
+          />
+
           <button className="btn" onClick={() => onLoginClick()}>
             Entrar
           </button>
 
-          <a className="gotonuser" href="/nuser">Quero me cadastrar</a>
-
+<a className="gotologin" href="/login">Já sou cadastrado</a>
+        
         </div>
       </main>
 
@@ -81,4 +98,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Nuser;
