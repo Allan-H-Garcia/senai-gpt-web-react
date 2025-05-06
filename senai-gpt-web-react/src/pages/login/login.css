@@ -49,7 +49,7 @@ h1 {
   justify-content: center;
   height: 100vh;
   width: 50vw;
-  /* width: 377px; */
+ 
 
 }
 
@@ -64,3 +64,26 @@ h1 {
   height: 100vh;
 }
 
+@media screen and (max-width: 1366px){
+/* desktop peq */ 
+
+}
+
+@media screen and (max-width: 1000px){
+/* tablet */
+  
+}
+
+@media screen and (max-width: 768px){
+/* celular */
+  .robo-image{
+display: none;
+
+  }
+
+  .logincontainer{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.937), rgba(244, 177, 177, 0.647)) ,   url(../../assets/imgs/Sidebar.png);
+    background-size: cover;
+    width: 100vw !important;
+  }
+}

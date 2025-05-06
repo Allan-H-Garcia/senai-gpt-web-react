@@ -170,10 +170,17 @@ function Chat() {
     }
   };
 
+  const [isLeftPanelOpen, setIsLeftPanelOpen] = useState(false);
+
+
   return (
     <>
       <div className="container">
-        <header className="painel-lateral">
+        <button className="btn-toggle-panel"
+        onClick={() => setIsLeftPanelOpen(true)}>
+        ☰
+        </button>
+        <header className={`painel-lateral ${isLeftPanelOpen == true? "open" : ""}`}>
           <div className="painel-lateral-topo">
             <button className="btnnovochat" onClick={() => NovoChat()}>
               {" "}

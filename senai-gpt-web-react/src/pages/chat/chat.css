@@ -202,3 +202,41 @@
     
 
 }
+
+@media screen and (max-width: 768px){
+.painel-lateral{
+  display: none;
+
+}
+
+.painel-central{
+  width: 100vw;
+}
+
+.btn-toggle-panel{
+width: 50px;
+height: 50px;
+border-radius: 100px;
+border: 1px solid #f24949;
+position: absolute;
+right: 20px;
+bottom: 120px;
+background-color: #f24949;
+font-size: 25px;
+color: #ffffff;
+z-index: 2;
+
+}
+
+.painel-lateral.open{
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  padding: 10px;  
+}
+
+  
+}
+}
