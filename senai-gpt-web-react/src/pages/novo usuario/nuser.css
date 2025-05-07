@@ -64,3 +64,32 @@ h1 {
   height: 100vh;
 }
 
+
+@media screen and (max-width: 768px){
+  .logincontainer{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.937), rgba(244, 177, 177, 0.647)) ,   url(../../assets/imgs/nuser.jpg);
+    background-size: cover;
+    width: 100vw !important;
+  
+  }
+
+  .nuser-image{
+    display: none;
+  }
+
+  h1{
+    justify-content: center;
+    font-size: 42px;
+    padding: 25px;
+  }
+
+  .inpt{
+    width: 80vw !important;
+  }
+
+  .btn{
+    width: 80vw !important;
+  }
+
+}
+

@@ -203,6 +203,10 @@
 
 }
 
+.btn-toggle-panel{
+  display: none;
+}
+
 @media screen and (max-width: 768px){
 .painel-lateral{
   display: none;
@@ -211,9 +215,13 @@
 
 .painel-central{
   width: 100vw;
+  justify-content: space-between;
+
+  
 }
 
 .btn-toggle-panel{
+display: block;
 width: 50px;
 height: 50px;
 border-radius: 100px;
@@ -233,10 +241,29 @@ z-index: 2;
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 10px;  
 }
 
-  
-}
+  .message-item{
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .message-item.chatbot{
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .pesquisa{
+    width: 90vw;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    margin-bottom: 20px;
+  }
+
+  .brand{
+
+    margin-top: 50px;
+  }
 }

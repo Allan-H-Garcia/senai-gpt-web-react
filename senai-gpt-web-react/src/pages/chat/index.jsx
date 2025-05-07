@@ -56,6 +56,7 @@ function Chat() {
 
   const clickchat = (chat) => {
     setChatSelecionado(chat);
+    setIsLeftPanelOpen(false)
   };
 
   const chatGPT = async (message) => {
@@ -177,7 +178,7 @@ function Chat() {
     <>
       <div className="container">
         <button className="btn-toggle-panel"
-        onClick={() => setIsLeftPanelOpen(true)}>
+        onClick={() => setIsLeftPanelOpen(!isLeftPanelOpen)}>
         ☰
         </button>
         <header className={`painel-lateral ${isLeftPanelOpen == true? "open" : ""}`}>
@@ -230,7 +231,7 @@ function Chat() {
         <main className="painel-central">
           {chatSelecionado == null && (
             <>
-              <div>
+              <div className="brand">
                 <img src={logochat} alt="" className="logo" />
               </div>
               <div className="tutorial">
