@@ -13,11 +13,14 @@ import mic from "../../assets/imgs/Microphone.png";
 import img1 from "../../assets/imgs/Image (1).png";
 import plane from "../../assets/imgs/PaperPlaneRight.png";
 import { useEffect, useState } from "react";
+import chaticon from "../../assets/imgs/Vector-white.svg"
 // import { useState } from "react";
+
 
 function Chat() {
   const [chats, setchats] = useState([]);
   const [chatSelecionado, setChatSelecionado] = useState(null);
+  const [darkMode, setDarkMode] = useState (false);
 
   const [userMessage, setUserMessage] = useState("");
 
@@ -173,6 +176,14 @@ function Chat() {
 
   const [isLeftPanelOpen, setIsLeftPanelOpen] = useState(false);
 
+  const toogleDarkMode = () => {
+setDarkMode (!darkMode)
+if (darkMode == true){
+  document.body.classList.remove("dark-mode")
+} else{
+  document.body.classList.add("dark-mode")
+}
+  }
 
   return (
     <>
@@ -199,25 +210,25 @@ function Chat() {
           <div className="painel-lateral-bot">
             <button className="chat-help">
               {" "}
-              <img src={trash} alt="" />
+              <img src={darkMode == true? chaticon :trash} alt="" />
               Clear conversations
             </button>
 
-            <button className="chat-help">
+            <button className="chat-help"onClick={() => toogleDarkMode ()}>
               {" "}
-              <img src={sun} alt="" />
+              <img src={darkMode == true? chaticon : sun} alt="" />
               Light mode
             </button>
 
             <button className="chat-help">
               {" "}
-              <img src={user} alt="" />
+              <img src={darkMode == true? chaticon :user} alt="" />
               My account
             </button>
 
             <button className="chat-help">
               {" "}
-              <img src={arrow} alt="" />
+              <img src={darkMode == true? chaticon :arrow} alt="" />
               Updates & FAQ
             </button>
 

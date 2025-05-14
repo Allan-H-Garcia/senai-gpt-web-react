@@ -1,269 +1,249 @@
 .btnnovochat {
-    color: white;
-    background-color: black;
-    border-radius: 7px;
-    width: 300px;
-    height: 35px ;  
-    font-size: 16px;
-    
-  }
-  
-.btnnovochat:hover{
+  color: white;
+  background-color: black;
+  border-radius: 7px;
+  width: 300px;
+  height: 35px;
+  font-size: 16px;
+}
+
+.btnnovochat:hover {
   background-color: rgb(255, 255, 255);
   color: #000000;
 }
 
-  .container {
-    display: flex;
-    
-  }
-  
-  .painel-lateral {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    height: 100vh;
-    width: 20vw;
-    /* background-color: red; */
-    border-right: 1px solid black;
-    justify-content: space-between;
-    
-    
-  }
-  
-  .painel-lateral img{
-    margin-right: 5px;
-  }
-  
-  .painel-central {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100vh;
-    width: 80vw;
-    align-content: center;
-    align-items: center;
-    /* background-color: blue; */
-  }
-  
-  .painel-lateral-topo {
-    width: 100%;
-    height: 70%;
-   /* background-color: green;*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    overflow: auto;
-  
-  }
-  
-  .painel-lateral-bot {
-    border-top: 1px solid rgba(0, 0, 0, 0.116);
-    width: 100%;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    /*background-color: purple;*/
-   
-  }
-  
-  .painel-lateral-topo img{
+.container {
+  display: flex;
+}
 
-    margin-right: 10px;
-  }
-  
-   .pesquisa {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 60vw;
-    height: 100px;
-    border: none;
-    background-color: #F7f9fb;
-    border-radius: 15px;
-   
-    /*border: 5px solid black;
+.painel-lateral {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 100vh;
+  width: 20vw;
+  /* background-color: red; */
+  border-right: 1px solid black;
+  justify-content: space-between;
+}
+
+.painel-lateral img {
+  margin-right: 5px;
+}
+
+.painel-central {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+  width: 80vw;
+  align-content: center;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+.painel-lateral-topo {
+  width: 100%;
+  height: 70%;
+  /* background-color: green;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  overflow: auto;
+}
+
+.painel-lateral-bot {
+  border-top: 1px solid rgba(0, 0, 0, 0.116);
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  /*background-color: purple;*/
+}
+
+.painel-lateral-topo img {
+  margin-right: 10px;
+}
+
+.pesquisa {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 60vw;
+  height: 100px;
+  border: none;
+  background-color: #f7f9fb;
+  border-radius: 15px;
+
+  /*border: 5px solid black;
     border-radius: 25px;*/
-    /* background-color: blueviolet; */
-  } 
-  
-  .pesquisa img{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-  
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  
-  
-  
-  .search {
-    width: 50vw;
-    height: 50px;
-    border: none;
-    border-radius: 15px;
-    background-color: #F7f9fb;
-    text-decoration: none;
-  
-  }
-  
-  .chat-help {
-    background-color: white;
-    border: none;
-    text-decoration: none;
-    text-align: left;
-    width: 300px;
-    height: 35px ;
-    font-size: 16px;
-    align-items: center;
-  
-  }
+  /* background-color: blueviolet; */
+}
 
-  .chat-help:hover {
-    background-color: rgb(229, 229, 229);
+.pesquisa img {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 
-  }
-  
-  .tutorial {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 30px;
-    /* background-color: gold; */
-  }
-  
-  .tutorial h1 {
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .tutorial p {
-    font-size: 12px;
-  }
-  
-  .logochat {
-  
-    width: 400px;
-  }
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
-  .chat-container {
+.search {
+  width: 50vw;
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  background-color: #f7f9fb;
+  text-decoration: none;
+}
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100vh;
-    width: 80vw;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 90vh;
-    overflow: auto;
+.chat-help {
+  /* background-color: white; */
+  border: none;
+  text-decoration: none;
+  text-align: left;
+  width: 300px;
+  height: 35px;
+  font-size: 16px;
+  align-items: center;
+}
 
+.chat-help:hover {
+  background-color: rgb(229, 229, 229);
+}
+
+.tutorial {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px;
+  /* background-color: gold; */
+}
+
+.tutorial h1 {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.tutorial p {
+  font-size: 12px;
+}
+
+.logochat {
+  width: 400px;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100vh;
+  width: 80vw;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 90vh;
+  overflow: auto;
 }
 
 .chat-header {
-
-    margin-bottom: 20px;
-
+  margin-bottom: 20px;
 }
 
 .chat-messages {
-
-    width: 100%;
-
+  width: 100%;
 }
 
 .chat-container .message-item {
-
-    background-color: #ccc;
-    border-radius: 12px 12px 0 12px;
-    padding: 20px;
-    width: 300px;
-    margin-left: auto;
-
+  background-color: #ccc;
+  border-radius: 12px 12px 0 12px;
+  padding: 20px;
+  width: 300px;
+  margin-left: auto;
 }
 
 .chat-container .message-item.chatbot {
-
-    background-color: #ccc;
-    border-radius: 12px 12px 12px 0px;
-    padding: 20px;
-    width: 300px;
-    margin-left: unset;
-    color: white;
-    background: #000;
-    
-
+  background-color: #ccc;
+  border-radius: 12px 12px 12px 0px;
+  padding: 20px;
+  width: 300px;
+  margin-left: unset;
+  color: white;
+  background: #000;
 }
 
-.btn-toggle-panel{
+.btn-toggle-panel {
   display: none;
 }
 
-@media screen and (max-width: 768px){
-.painel-lateral{
-  display: none;
+@media screen and (max-width: 768px) {
+  .painel-lateral {
+    display: none;
+  }
 
-}
+  .painel-central {
+    width: 100vw;
+    justify-content: space-between;
+  }
 
-.painel-central{
-  width: 100vw;
-  justify-content: space-between;
+  .btn-toggle-panel {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border: 1px solid #f24949;
+    position: absolute;
+    right: 20px;
+    bottom: 120px;
+    background-color: #f24949;
+    font-size: 25px;
+    color: #ffffff;
+    z-index: 2;
+  }
 
-  
-}
+  .painel-lateral.open {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+  }
 
-.btn-toggle-panel{
-display: block;
-width: 50px;
-height: 50px;
-border-radius: 100px;
-border: 1px solid #f24949;
-position: absolute;
-right: 20px;
-bottom: 120px;
-background-color: #f24949;
-font-size: 25px;
-color: #ffffff;
-z-index: 2;
-
-}
-
-.painel-lateral.open{
-  display: block;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(255, 255, 255);
-  padding: 10px;  
-}
-
-  .message-item{
+  .message-item {
     padding: 5px;
     margin: 10px;
   }
 
-  .message-item.chatbot{
+  .message-item.chatbot {
     padding: 5px;
     margin: 10px;
   }
 
-  .pesquisa{
+  .pesquisa {
     width: 90vw;
     flex-wrap: nowrap;
     align-content: flex-end;
     margin-bottom: 20px;
   }
 
-  .brand{
-
+  .brand {
     margin-top: 50px;
   }
+}
+
+body.dark-mode .painel-lateral {
+  background-color: black !important;
+}
+
+body.dark-mode .chat-help {
+  background-color: #000;
+  color: white;
 }
