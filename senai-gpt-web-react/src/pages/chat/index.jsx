@@ -26,6 +26,12 @@ function Chat() {
 
   useEffect(() => {
     getChats();
+
+    let modoEscuro = localStorage.getItem("darkMode")
+    if (modoEscuro ===true){
+      setDarkMode(true)
+      document.body.classList.add("dark-mode")
+    }
   }, []);
 
   const getChats = async () => {
@@ -184,6 +190,8 @@ if (darkMode == true){
   document.body.classList.add("dark-mode")
 }
   }
+
+  localStorage
 
   return (
     <>
